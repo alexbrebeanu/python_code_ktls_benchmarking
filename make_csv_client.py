@@ -26,6 +26,7 @@ pathOUT = "/home/alex/Desktop/benchmark_analysis/results_client_csv"
 for file in os.listdir(pathIN):
     for cip in ciphers: 
         if file.startswith(cip):
+            print(file)
             if "_TLS_" in file:
                 with open(os.path.join(pathIN, file) , "r", encoding='utf-8') as f: 
                     outpath = os.path.join(pathOUT, cip)+file[len(cip)-1:][5:][:-7]+".csv"
